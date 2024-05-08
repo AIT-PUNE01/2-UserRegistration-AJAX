@@ -2,7 +2,7 @@
 
 ```git clone (link)```
 
-```cd C:\Users your path```
+```cd your path```
 
 ```npm install```
 
