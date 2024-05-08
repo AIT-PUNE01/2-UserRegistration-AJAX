@@ -1,16 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require('express');  //configure the web server
+const bodyParser = require('body-parser'); // used to parse incoming request bodies in JSON format.
 const path = require('path'); // Import the path module
 
-const app = express();
+const app = express();  //create instance
 const PORT = 3004; // You can change this to any port you prefer
 
 // Middleware to parse JSON request body
 app.use(bodyParser.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-let userList = [];
+app.use(express.static(path.join(__dirname, 'public')));/
+let userList = [];  //This initializes an empty array to store user registration data.
 
 const userData = [
     { username: "John", email: "john@example.com", loginEmail: "john.login@example.com" },
@@ -19,10 +19,10 @@ const userData = [
 ];
 
 // Route to handle user registration
-app.post('/register', (req, res) => {
+app.post('/register', (req, res) => {    //. It expects JSON data containing username, email, and password in the request body.
     const { username, email, password } = req.body;
     const userData = req.body;
-    userList.push(userData);
+    userList.push(userData);  //This adds the received user data to the userList array.
 
     // Here you can validate the data, save it to a database, etc.
     // For simplicity, let's just log the received data
@@ -36,7 +36,7 @@ app.get('/userList', (req, res) => {
     res.json({ userList });; // Send the user data as a JSON response
 });
 // Serve HTML file for data list page
-app.use(express.static('public'));
+app.use(express.static('public'));  
 
 
 // Start the server
