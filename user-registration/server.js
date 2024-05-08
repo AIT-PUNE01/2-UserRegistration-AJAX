@@ -9,7 +9,7 @@ const PORT = 3004; // You can change this to any port you prefer
 app.use(bodyParser.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));/
+app.use(express.static(path.join(__dirname, 'public')));
 let userList = [];  //This initializes an empty array to store user registration data.
 
 const userData = [
