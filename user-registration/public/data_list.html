@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333; /* Dark gray color */
+            margin-top: 20px; /* Add margin to the top */
+            font-size: 24px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+            background-color: #fff; /* White background */
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Light gray border */
+        }
+
+        th {
+            background-color: #007bff; /* Blue header background */
+            color: #fff; /* White header text color */
+        }
+
+        tr:hover {
+            background-color: #f2f2f2; /* Light gray background on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>User Data List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username    ------    Email </th>
+                
+            </tr>
+        </thead>
+        <tbody id="userDataList">
+            <!-- Table rows will be populated dynamically using JavaScript -->
+        </tbody>
+    </table>
+    <script src="datalist.js"></script>
+</body>
+</html>

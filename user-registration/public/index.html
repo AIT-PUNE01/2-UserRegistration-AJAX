@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: navy; /* Navy blue background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        #registrationForm {
+            background-color: #fff; /* White background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            max-width: 400px; /* Limit form width */
+            width: 100%;
+            overflow: hidden; /* Prevent box shadow overflow */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Dark gray color */
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            color: #555; /* Medium gray color */
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        button[type="submit"] {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 15px 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            background-color: #f9f9f9; /* Light gray background */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button[type="submit"] {
+            background-color: #007bff; /* Blue button background */
+            color: #fff; /* White button text color */
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Dark blue button background on hover */
+        }
+
+        @media (max-width: 480px) {
+            #registrationForm {
+                padding: 20px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            button[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="registrationForm">
+        <h1>User Registration</h1>
+        <form id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form data
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Create user object
+            const user = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+            // Send data to server using AJAX POST method
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3004/register", true); // Assuming server is running locally on port 3000
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Data successfully sent
+                        alert("Registration successful!");
+                        // Redirect to data list page
+                        window.location.href = "data_list.html";
+                    } else {
+                        // Error handling
+                        alert("Registration failed. Please try again later.");
+                    }
+                }
+            };
+            xhr.send(JSON.stringify(user));
+        });
+    </script>
+</body>
+</html>
