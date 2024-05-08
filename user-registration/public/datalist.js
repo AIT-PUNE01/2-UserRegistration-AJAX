@@ -1,6 +1,6 @@
 // Fetch user data from server
-fetch('/userList')
-    .then(response => response.json())
+fetch('/userList') //It asks the server for user data.
+    .then(response => response.json())  //
     .then(data => {
         const userList = data.userList;
         const userDataList = document.getElementById('userDataList');
@@ -13,3 +13,4 @@ fetch('/userList')
     .catch(error => {
         console.error('Error:', error);
     });
+//we are extracting the email id and the username from which we log in 
