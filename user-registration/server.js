@@ -1,5 +1,5 @@
 const express = require('express');  //configure the web server
-const bodyParser = require('body-parser'); // used to parse incoming request bodies in JSON format.
+const bodyParser = require('body-parser'); // used to parse incoming HTTP request bodies in JSON format.(middleware, for ex sak@gmail.com to show in data_list and server) 
 const path = require('path'); // Import the path module
 
 const app = express();  //create instance
