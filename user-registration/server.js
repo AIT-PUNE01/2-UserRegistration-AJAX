@@ -43,3 +43,8 @@ app.use(express.static('public'));
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+//The AJAX (Asynchronous JavaScript and XML) method is a technique used in web development to send and receive data from a server asynchronously without reloading the entire web page.
+//Node.js: Node.js is a runtime environment that allows you to run JavaScript code on the server-side. high-performance network applications.
+ //Express.js is a web application framework for Node.js. It provides a robust set of features for building web applications and API.
