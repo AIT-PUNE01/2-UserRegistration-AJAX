@@ -13,3 +13,4 @@ or
 ```npm install -express body-parser```
 
 ```node server.js```
+C:\Users\HP\Desktop\finallasd\2-UserRegistration-AJAX\user-registration
