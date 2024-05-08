@@ -2,6 +2,8 @@
 
 ```git clone (link)```
 
+```cd C:\Users your path```
+
 ```npm install```
 
 or
@@ -13,4 +15,4 @@ or
 ```npm install -express body-parser```
 
 ```node server.js```
-C:\Users\HP\Desktop\finallasd\2-UserRegistration-AJAX\user-registration
+
